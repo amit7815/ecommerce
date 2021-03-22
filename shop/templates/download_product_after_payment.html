@@ -1,0 +1,20 @@
+{% extends 'header.html' %}
+
+{% block title %}
+Payment success
+{% endblock title %} 
+
+{% block content %}
+<div >  
+  <div class="p-4 m-4 text-center">
+      <div class="jumbotron bg-white rounded ui segment">
+          
+            <h1 >Payment success</h1>
+            <hr>
+            <div style="font-size:20px">Payment success for product <b>{{payment.name.name}}</b>,click given button to download product</div>
+            <div><a target="_blank" class="ui button teal mt-4" href="/download/paidproduct/{{payment.name.id}}">Download Product</a>
+            <a class="ui button teal" href="/">Go to Home</a></div> 
+      </div>
+  </div>
+</div>
+{% endblock %}

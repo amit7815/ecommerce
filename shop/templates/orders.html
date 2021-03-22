@@ -1,0 +1,49 @@
+{% extends 'header.html' %}
+
+{% block title %}
+Myorders
+{% endblock title %} 
+
+{% block content %}
+
+
+<div class="container mt-4">
+  <h2>My Orders</h2>
+  <hr>
+  {% if orders %}
+  <div class="border p-4 m-4 rounded">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>SNo.</th>
+          <th>Product</th>
+          <th>Download</th>
+      </tr>
+      </thead>
+
+      <tbody>
+        {% for order in orders %}
+          <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{order.name.name}}</td>
+            <td><a target="_blank" href="/download/paidproduct/{{order.name.id}}" class="ui button teal">Download</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    
+    </table>
+  </div>
+    
+  
+  {% else %}
+  <div class="border p-4 m-4 rounded">
+      <h3 style="color:red">Sorry !You have no orders to see here</h2>
+    </div>
+  {% endif %}
+   
+</div>
+
+
+</div>
+
+{% endblock %}
